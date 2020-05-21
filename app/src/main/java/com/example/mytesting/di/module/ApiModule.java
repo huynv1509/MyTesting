@@ -3,7 +3,7 @@ package com.example.mytesting.di.module;
 import android.app.Application;
 import android.content.Context;
 
-import com.example.mytesting.constant.Constants;
+import com.example.mytesting.constants.Constant;
 import com.example.mytesting.data.remote.interceptor.AuthenticationInterceptor;
 import com.google.gson.GsonBuilder;
 import com.jakewharton.retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
@@ -102,7 +102,7 @@ public class ApiModule {
                 .addConverterFactory(GsonConverterFactory.create(gsonBuilder.serializeNulls().create()))
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .client(client)
-                .baseUrl(Constants.BASE_URL)
+                .baseUrl(Constant.BASE_URL)
                 .build();
     }
 }

@@ -1,12 +1,14 @@
-package com.example.mytesting.constant;
+package com.example.mytesting.constants;
 
 import com.example.mytesting.BuildConfig;
 
 import java.util.regex.Pattern;
 
-public class Constants {
+public class Constant {
     public static final String BASE_URL = BuildConfig.BASE_URL;
     public static final Pattern EMAIL_PATTERN = Pattern.compile("^[\\w-+]+(\\.[\\w]+)*@[\\w-]+(\\.[\\w]+)*(\\.[a-z]{2,})$", Pattern.CASE_INSENSITIVE);
+
+    public static final String DB_NAME = "app_database.db";
 
     public static final int HTTP_STATUS_SUCCESS = 200;
     public static final int HTTP_STATUS_NOT_FOUND = 400;
