@@ -4,7 +4,7 @@ import android.content.Context;
 
 import androidx.room.Room;
 
-import com.example.mytesting.constants.Constant;
+import com.example.mytesting.constants.Constants;
 import com.example.mytesting.data.local.dao.UserDao;
 import com.example.mytesting.data.local.db.AppDatabase;
 import com.example.mytesting.di.DatabaseInfo;
@@ -27,7 +27,7 @@ public class DatabaseModule {
     @Provides
     @DatabaseInfo
     String provideDatabaseName() {
-        return Constant.DB_NAME;
+        return Constants.DB_NAME;
     }
 
     @Singleton

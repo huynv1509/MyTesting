@@ -4,7 +4,7 @@ import com.example.mytesting.BuildConfig;
 
 import java.util.regex.Pattern;
 
-public class Constant {
+public class Constants {
     public static final String BASE_URL = BuildConfig.BASE_URL;
     public static final Pattern EMAIL_PATTERN = Pattern.compile("^[\\w-+]+(\\.[\\w]+)*@[\\w-]+(\\.[\\w]+)*(\\.[a-z]{2,})$", Pattern.CASE_INSENSITIVE);
 

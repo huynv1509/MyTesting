@@ -1,0 +1,11 @@
+package com.example.mytesting.base;
+
+public enum NetworkViewAction {
+    SHOW_ERROR_BAD_REQUEST,
+    SHOW_ERROR_CONNECT_EXCEPTION,
+    SHOW_ERROR_SERVER_ERROR,
+    SHOW_ERROR_FORBIDDEN_ACCESS,
+    SHOW_ERROR_UN_AUTHORIZE,
+    SHOW_ERROR_NETWORK_TIMEOUT,
+    LOGOUT,
+}

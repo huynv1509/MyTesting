@@ -115,4 +115,6 @@ dependencies {
 
     //preference
     implementation "androidx.preference:preference:1.1.1"
+
+    implementation 'org.apache.commons:commons-lang3:3.7'
 }
