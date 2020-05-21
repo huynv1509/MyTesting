@@ -21,6 +21,7 @@ public class RegisterActivity extends BaseActivity<ActivityRegisterBinding, Regi
     @Override
     protected void initViews() {
         mDataBinding = getViewDataBinding();
+        initListener();
     }
 
     @Override
@@ -34,6 +35,7 @@ public class RegisterActivity extends BaseActivity<ActivityRegisterBinding, Regi
     }
 
     private void initListener() {
-
+        mDataBinding.btnRegister.setOnClickListener(v -> {
+        });
     }
 }

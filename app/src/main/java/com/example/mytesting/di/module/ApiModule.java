@@ -5,6 +5,7 @@ import android.content.Context;
 
 import com.example.mytesting.constants.Constants;
 import com.example.mytesting.data.remote.interceptor.AuthenticationInterceptor;
+import com.example.mytesting.data.remote.service.UserService;
 import com.google.gson.GsonBuilder;
 import com.jakewharton.retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 
@@ -104,5 +105,11 @@ public class ApiModule {
                 .client(client)
                 .baseUrl(Constants.BASE_URL)
                 .build();
+    }
+
+    @Provides
+    @Singleton
+    UserService provideUserService(Retrofit retrofit) {
+        return retrofit.create(UserService.class);
     }
 }

@@ -9,19 +9,23 @@
             type="com.example.mytesting.ui.mainscreen.viewmodel.MainViewModel" />
     </data>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ui.mainscreen.activity.MainActivity">
+        android:background="@color/colorMainBackground">
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/userList"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/fab_margin"
+            android:layout_marginBottom="@dimen/fab_margin"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/horizontalView"
+            app:layout_constraintBottom_toBottomOf="parent"/>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Hello World!"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        <include
+            layout="@layout/loading_layout"
+            app:isLoading="@{viewModel.isLoading}"/>
+    </FrameLayout>
 </layout>

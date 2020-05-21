@@ -21,6 +21,7 @@ public class MainActivity extends BaseActivity<ActivityMainBinding, MainViewMode
     @Override
     protected void initViews() {
         mDataBinding = getViewDataBinding();
+        viewModel.onFetchUsers();
     }
 
     @Override

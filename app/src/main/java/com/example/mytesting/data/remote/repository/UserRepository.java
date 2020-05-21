@@ -1,7 +1,6 @@
 package com.example.mytesting.data.remote.repository;
 
 import com.example.mytesting.base.BaseRepository;
-import com.example.mytesting.data.model.BaseResponse;
 import com.example.mytesting.data.model.User;
 import com.example.mytesting.data.remote.service.UserService;
 
@@ -19,15 +18,15 @@ public class UserRepository extends BaseRepository {
         this.mUserService = userService;
     }
 
-    public Observable<BaseResponse<List<User>>> getUsers() {
+    public Observable<List<User>> getUsers() {
         return mUserService.getUsers();
     }
 
-    public Observable<BaseResponse<User>> getUserDetail(String username) {
+    public Observable<User> getUserDetail(String username) {
         return mUserService.getUserDetail(username);
     }
 
-    public Observable<BaseResponse<List<User>>> getFollowers(String username) {
+    public Observable<List<User>> getFollowers(String username) {
         return mUserService.getFollowers(username);
     }
 }
