@@ -1,4 +1,4 @@
-package com.example.mytesting.constant;
+package com.example.mytesting.constants;
 
 public enum Status {
     SUCCESS,
