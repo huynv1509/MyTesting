@@ -11,7 +11,7 @@ import javax.inject.Inject;
 public class RegisterActivity extends BaseActivity<ActivityRegisterBinding, RegisterViewModel> {
     @Inject
     RegisterViewModel viewModel;
-    private ActivityRegisterBinding mDataBinding;
+    private ActivityRegisterBinding mViewBinding;
 
     @Override
     protected int getLayoutId() {
@@ -20,7 +20,7 @@ public class RegisterActivity extends BaseActivity<ActivityRegisterBinding, Regi
 
     @Override
     protected void initViews() {
-        mDataBinding = getViewDataBinding();
+        mViewBinding = getViewDataBinding();
         initListener();
     }
 
@@ -35,7 +35,7 @@ public class RegisterActivity extends BaseActivity<ActivityRegisterBinding, Regi
     }
 
     private void initListener() {
-        mDataBinding.btnRegister.setOnClickListener(v -> {
+        mViewBinding.btnRegister.setOnClickListener(v -> {
         });
     }
 

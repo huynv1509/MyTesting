@@ -9,7 +9,8 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="@dimen/fab_margin"
         android:layout_marginRight="@dimen/fab_margin"
-        android:layout_marginBottom="@dimen/fab_margin"
+        android:layout_marginTop="@dimen/btn_radius"
+        android:layout_marginBottom="@dimen/btn_radius"
         app:cardElevation="@dimen/stroke_width"
         app:cardCornerRadius="@dimen/btn_radius">
 
@@ -21,7 +22,7 @@
                 android:id="@+id/avatar"
                 android:layout_width="@dimen/img_height"
                 android:layout_height="@dimen/img_height"
-                android:layout_margin="@dimen/fab_margin"
+                android:layout_margin="@dimen/btn_radius"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/usernameTv"
                 app:layout_constraintTop_toTopOf="parent"

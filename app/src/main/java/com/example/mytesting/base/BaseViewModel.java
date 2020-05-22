@@ -19,8 +19,7 @@ import java.net.UnknownHostException;
 import io.reactivex.disposables.CompositeDisposable;
 import io.reactivex.disposables.Disposable;
 
-public class BaseViewModel<N> extends ViewModel {
-    private N mNavigator;
+public class BaseViewModel extends ViewModel {
     private ObservableField<Boolean> isLoading = new ObservableField<>();
     private MutableLiveData<String> showErrorObs = new MutableLiveData<>();
     private MutableLiveData<NetworkViewAction> networkViewAction = new MutableLiveData<>();
@@ -32,15 +31,7 @@ public class BaseViewModel<N> extends ViewModel {
         return networkViewAction;
     }
 
-    public void setNavigator(N navigator) {
-        this.mNavigator = navigator;
-    }
-
     void onViewCreated() {}
-
-    public N getNavigator() {
-        return mNavigator;
-    }
 
     public ObservableField<Boolean> getIsLoading() {
         return isLoading;
@@ -74,7 +65,7 @@ public class BaseViewModel<N> extends ViewModel {
         return handleNetworkException(Resource, false);
     }
 
-    protected <T> boolean handleNetworkException(BaseResponse<T> resource, boolean skipError) {
+    private <T> boolean handleNetworkException(BaseResponse<T> resource, boolean skipError) {
         if (resource.status == Status.SUCCESS || resource.status == Status.ERROR) {
             // Request successfully, no errors to handle, will allow API business code to be executed
             return false;
@@ -114,7 +105,7 @@ public class BaseViewModel<N> extends ViewModel {
                 case Constants.HTTP_STATUS_NOT_FOUND:
                     networkViewAction.setValue(NetworkViewAction.SHOW_ERROR_BAD_REQUEST);
                     break;
-                case Constants.HTTP_STATUS_UNAUTHORIZE:
+                case Constants.HTTP_STATUS_UN_AUTHORIZE:
                     networkViewAction.setValue(NetworkViewAction.SHOW_ERROR_UN_AUTHORIZE);
                     break;
                 case Constants.HTTP_SERVICE_UNAVAILABLE:

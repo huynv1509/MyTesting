@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools">
+    xmlns:app="http://schemas.android.com/apk/res-auto">
     <data>
         <variable
             name="viewModel"
@@ -13,188 +12,203 @@
         android:layout_height="match_parent"
         android:background="@color/colorMainBackground">
 
-        <LinearLayout
+        <androidx.core.widget.NestedScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:fillViewport="true"
+            android:fitsSystemWindows="true"
+            android:isScrollContainer="true">
 
-            <androidx.cardview.widget.CardView
-                android:id="@+id/userInfoCard"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="@dimen/fab_margin"
-                android:animateLayoutChanges="true"
-                app:cardElevation="@dimen/stroke_width"
-                app:cardCornerRadius="@dimen/btn_radius">
+                android:layout_height="match_parent"
+                android:orientation="vertical">
 
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:id="@+id/userConstraint"
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/userInfoCard"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:animateLayoutChanges="true">
-                    <TextView
-                        android:id="@+id/userTitleTv"
+                    android:layout_margin="@dimen/fab_margin"
+                    android:animateLayoutChanges="true"
+                    app:cardElevation="@dimen/stroke_width"
+                    app:cardCornerRadius="@dimen/btn_radius">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/userConstraint"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        tools:text="@string/user_information"
-                        android:textSize="@dimen/text_size_large"
-                        android:fontFamily="@font/roboto_regular"
-                        android:textColor="@color/colorPrimary"
-                        android:layout_margin="@dimen/padding_10"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"/>
-
-                    <LinearLayout
-                        android:id="@+id/userContentLn"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:background="@color/colorCardBackground"
-                        android:padding="@dimen/fab_margin"
-                        app:layout_constraintTop_toBottomOf="@+id/userTitleTv"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent">
-
+                        android:animateLayoutChanges="true">
                         <TextView
-                            android:id="@+id/nameTitleTv"
+                            android:id="@+id/userTitleTv"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="@string/name"
-                            android:textSize="@dimen/text_size"
+                            android:drawableEnd="@drawable/arrow_up"
+                            android:drawablePadding="@dimen/padding_10"
+                            android:text="@string/user_information"
+                            android:textSize="@dimen/text_size_large"
                             android:fontFamily="@font/roboto_regular"
-                            android:textColor="@color/colorPrimary"/>
+                            android:textColor="@color/colorPrimary"
+                            android:layout_margin="@dimen/padding_10"
+                            android:paddingBottom="@dimen/padding_10"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"/>
 
-                        <TextView
-                            android:id="@+id/nameTv"
+                        <LinearLayout
+                            android:id="@+id/userContentLn"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="@dimen/btn_radius"
-                            android:textSize="@dimen/text_size"
-                            android:fontFamily="@font/roboto_regular"
-                            android:textColor="@color/colorAccent"/>
+                            android:orientation="vertical"
+                            android:background="@color/colorCardBackground"
+                            android:padding="@dimen/fab_margin"
+                            app:layout_constraintTop_toBottomOf="@+id/userTitleTv"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent">
 
-                        <TextView
-                            android:id="@+id/companyTitleTv"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="@dimen/fab_margin"
-                            android:text="@string/company"
-                            android:textSize="@dimen/text_size"
-                            android:fontFamily="@font/roboto_regular"
-                            android:textColor="@color/colorPrimary"/>
+                            <TextView
+                                android:id="@+id/nameTitleTv"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/name"
+                                android:textSize="@dimen/text_size"
+                                android:fontFamily="@font/roboto_regular"
+                                android:textColor="@color/colorPrimary"/>
 
-                        <TextView
-                            android:id="@+id/companyTv"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="@dimen/btn_radius"
-                            android:textSize="@dimen/text_size"
-                            android:fontFamily="@font/roboto_regular"
-                            android:textColor="@color/colorAccent"/>
+                            <TextView
+                                android:id="@+id/nameTv"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/btn_radius"
+                                android:textSize="@dimen/text_size"
+                                android:fontFamily="@font/roboto_regular"
+                                android:textColor="@color/colorAccent"/>
 
-                        <TextView
-                            android:id="@+id/locationTitleTv"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="@dimen/fab_margin"
-                            android:text="@string/location"
-                            android:textSize="@dimen/text_size"
-                            android:fontFamily="@font/roboto_regular"
-                            android:textColor="@color/colorPrimary"/>
+                            <TextView
+                                android:id="@+id/companyTitleTv"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/padding_10"
+                                android:text="@string/company"
+                                android:textSize="@dimen/text_size"
+                                android:fontFamily="@font/roboto_regular"
+                                android:textColor="@color/colorPrimary"/>
 
-                        <TextView
-                            android:id="@+id/locationTv"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="@dimen/btn_radius"
-                            android:textSize="@dimen/text_size"
-                            android:fontFamily="@font/roboto_regular"
-                            android:textColor="@color/colorAccent"/>
+                            <TextView
+                                android:id="@+id/companyTv"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/btn_radius"
+                                android:textSize="@dimen/text_size"
+                                android:fontFamily="@font/roboto_regular"
+                                android:textColor="@color/colorAccent"/>
 
-                        <TextView
-                            android:id="@+id/blogTitleTv"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="@dimen/fab_margin"
-                            android:text="@string/blog"
-                            android:textSize="@dimen/text_size"
-                            android:fontFamily="@font/roboto_regular"
-                            android:textColor="@color/colorPrimary"/>
+                            <TextView
+                                android:id="@+id/locationTitleTv"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/padding_10"
+                                android:text="@string/location"
+                                android:textSize="@dimen/text_size"
+                                android:fontFamily="@font/roboto_regular"
+                                android:textColor="@color/colorPrimary"/>
 
-                        <TextView
-                            android:id="@+id/blogTv"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="@dimen/btn_radius"
-                            android:textSize="@dimen/text_size"
-                            android:fontFamily="@font/roboto_regular"
-                            android:textColor="@color/colorAccent"/>
-                    </LinearLayout>
-                </androidx.constraintlayout.widget.ConstraintLayout>
-            </androidx.cardview.widget.CardView>
+                            <TextView
+                                android:id="@+id/locationTv"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/btn_radius"
+                                android:textSize="@dimen/text_size"
+                                android:fontFamily="@font/roboto_regular"
+                                android:textColor="@color/colorAccent"/>
 
-            <androidx.cardview.widget.CardView
-                android:id="@+id/followerCard"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/fab_margin"
-                android:layout_marginRight="@dimen/fab_margin"
-                android:layout_marginBottom="@dimen/fab_margin"
-                android:animateLayoutChanges="true"
-                app:cardElevation="@dimen/stroke_width"
-                app:cardCornerRadius="@dimen/btn_radius">
+                            <TextView
+                                android:id="@+id/blogTitleTv"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/padding_10"
+                                android:text="@string/blog"
+                                android:textSize="@dimen/text_size"
+                                android:fontFamily="@font/roboto_regular"
+                                android:textColor="@color/colorPrimary"/>
 
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:id="@+id/followerConstraint"
+                            <TextView
+                                android:id="@+id/blogTv"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/btn_radius"
+                                android:textSize="@dimen/text_size"
+                                android:fontFamily="@font/roboto_regular"
+                                android:textColor="@color/colorAccent"/>
+                        </LinearLayout>
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/followerCard"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:animateLayoutChanges="true">
+                    android:layout_marginLeft="@dimen/fab_margin"
+                    android:layout_marginRight="@dimen/fab_margin"
+                    android:layout_marginBottom="@dimen/fab_margin"
+                    android:animateLayoutChanges="true"
+                    app:cardElevation="@dimen/stroke_width"
+                    app:cardCornerRadius="@dimen/btn_radius">
 
-                    <TextView
-                        android:id="@+id/followerTitleTv"
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/followerConstraint"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        tools:text="Followers information"
-                        android:textSize="@dimen/text_size_large"
-                        android:fontFamily="@font/roboto_regular"
-                        android:textColor="@color/colorPrimary"
-                        android:layout_margin="@dimen/padding_10"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"/>
+                        android:animateLayoutChanges="true">
 
-                    <androidx.recyclerview.widget.RecyclerView
-                        android:id="@+id/followerList"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_marginTop="@dimen/fab_margin"
-                        android:layout_marginBottom="@dimen/fab_margin"
-                        app:layout_constraintTop_toBottomOf="@+id/followerTitleTv"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"/>
+                        <TextView
+                            android:id="@+id/followerTitleTv"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/follower_information"
+                            android:textSize="@dimen/text_size_large"
+                            android:drawableEnd="@drawable/arrow_up"
+                            android:fontFamily="@font/roboto_regular"
+                            android:textColor="@color/colorPrimary"
+                            android:layout_margin="@dimen/padding_10"
+                            android:paddingBottom="@dimen/padding_10"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"/>
 
-                    <View
-                        android:id="@+id/divider"
-                        android:layout_width="0dp"
-                        android:layout_height="1dp"
-                        android:layout_marginTop="@dimen/fab_margin"
-                        android:background="@color/colorStroke"
-                        app:layout_constraintTop_toBottomOf="@+id/followerList"
-                        app:layout_constraintLeft_toLeftOf="parent"
-                        app:layout_constraintRight_toRightOf="parent"/>
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/followerList"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:background="@color/colorCardBackground"
+                            app:layout_constraintTop_toBottomOf="@+id/followerTitleTv"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"/>
 
-                    <TextView
-                        android:id="@+id/footerTv"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="@dimen/padding_10"
-                        app:layout_constraintTop_toBottomOf="@+id/divider"
-                        app:layout_constraintLeft_toLeftOf="parent"
-                        app:layout_constraintRight_toRightOf="parent"/>
-                </androidx.constraintlayout.widget.ConstraintLayout>
-            </androidx.cardview.widget.CardView>
-        </LinearLayout>
+                        <View
+                            android:id="@+id/divider"
+                            android:layout_width="0dp"
+                            android:layout_height="1dp"
+                            android:layout_marginTop="@dimen/padding_10"
+                            android:background="@color/colorStroke"
+                            app:layout_constraintTop_toBottomOf="@+id/followerList"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintRight_toRightOf="parent"/>
+
+                        <TextView
+                            android:id="@+id/footerTv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/fab_margin"
+                            android:fontFamily="@font/roboto_regular"
+                            android:textColor="@color/colorPrimary"
+                            app:layout_constraintTop_toBottomOf="@+id/divider"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"/>
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
 
         <include
             layout="@layout/loading_layout"
