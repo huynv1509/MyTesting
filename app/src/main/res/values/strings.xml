@@ -1,10 +1,15 @@
 <resources>
-    <string name="app_name">My Testing Application</string>
+    <string name="app_name">Testing Application</string>
     <string name="login">Login</string>
-    <string name="password">Password</string>
     <string name="e_mail">Email</string>
-    <string name="re_type_email">Re-type Email</string>
+    <string name="re_type_email">Confirm Email</string>
     <string name="register">Register</string>
-    <string name="re_type_password">Re-type Password</string>
+    <string name="password">Password</string>
+    <string name="re_type_password">Confirm Password</string>
     <string name="your_name">Full Name</string>
+    <string name="user_information">User information</string>
+    <string name="name">Name</string>
+    <string name="company">Company</string>
+    <string name="location">Location</string>
+    <string name="blog">Blog</string>
 </resources>

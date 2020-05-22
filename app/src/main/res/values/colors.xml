@@ -10,4 +10,5 @@
     <color name="colorMainBackground">#ECF0F7</color>
     <color name="colorTextNormal">#4F6C8D</color>
     <color name="colorLoadingBg">#CADBFB</color>
+    <color name="colorCardBackground">#FCFCFC</color>
 </resources>

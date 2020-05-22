@@ -38,4 +38,8 @@ public class RegisterActivity extends BaseActivity<ActivityRegisterBinding, Regi
         mDataBinding.btnRegister.setOnClickListener(v -> {
         });
     }
+
+    private void dataValidation() {
+
+    }
 }
