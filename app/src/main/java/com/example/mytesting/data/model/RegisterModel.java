@@ -1,13 +1,13 @@
 package com.example.mytesting.data.model;
 
+import android.text.TextUtils;
+
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
 import com.example.mytesting.constants.RegisterStatus;
 import com.example.mytesting.utils.CommonUtils;
-
-import org.apache.commons.lang3.StringUtils;
 
 @Entity(tableName = "registerTbl")
 public class RegisterModel {
@@ -87,25 +87,25 @@ public class RegisterModel {
     }
 
     private boolean isNameValid() {
-        return StringUtils.isNotEmpty(mName.trim());
+        return !TextUtils.isEmpty(mName.trim());
     }
 
     private boolean isEmailValid() {
-        return StringUtils.isNotEmpty(mEmail.trim());
+        return !TextUtils.isEmpty(mEmail.trim());
     }
 
     private boolean isPasswordValid() {
-        return StringUtils.isNotEmpty(mPassword.trim());
+        return !TextUtils.isEmpty(mPassword.trim());
     }
 
     private boolean isConfirmEmailValid() {
-        if (StringUtils.isNotEmpty(mEmail.trim()) && StringUtils.isNotEmpty(mConfirmEmail.trim()))
+        if (!TextUtils.isEmpty(mEmail.trim()) && !TextUtils.isEmpty(mConfirmEmail.trim()))
             return CommonUtils.validateEmail(mEmail) && mEmail.equals(mConfirmEmail);
         return false;
     }
 
     private boolean isConfirmPasswordValid() {
-        if (StringUtils.isNotEmpty(mPassword.trim()) && StringUtils.isNotEmpty(mConfirmPassword.trim()))
+        if (!TextUtils.isEmpty(mPassword.trim()) && !TextUtils.isEmpty(mConfirmPassword.trim()))
             return mPassword.equals(mConfirmPassword);
         return false;
     }

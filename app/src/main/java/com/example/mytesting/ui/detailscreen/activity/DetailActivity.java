@@ -1,6 +1,7 @@
 package com.example.mytesting.ui.detailscreen.activity;
 
 import android.animation.LayoutTransition;
+import android.text.TextUtils;
 import android.view.View;
 
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -15,8 +16,6 @@ import com.example.mytesting.ui.detailscreen.adapter.FollowerAdapter;
 import com.example.mytesting.ui.detailscreen.viewmodel.DetailViewModel;
 import com.google.android.material.snackbar.BaseTransientBottomBar;
 import com.google.android.material.snackbar.Snackbar;
-
-import org.apache.commons.lang3.StringUtils;
 
 import javax.inject.Inject;
 
@@ -89,7 +88,7 @@ public class DetailActivity extends BaseActivity<ActivityDetailBinding, DetailVi
             viewModel.hideLoading();
             if (user != null) {
                 viewModel.fetchFollower(user.getUsername());
-                if (StringUtils.isNotEmpty(user.getName())) {
+                if (!TextUtils.isEmpty(user.getName())) {
                     mViewBinding.nameTitleTv.setVisibility(View.VISIBLE);
                     mViewBinding.nameTv.setVisibility(View.VISIBLE);
                     mViewBinding.nameTv.setText(user.getName());
@@ -98,7 +97,7 @@ public class DetailActivity extends BaseActivity<ActivityDetailBinding, DetailVi
                     mViewBinding.nameTv.setVisibility(View.GONE);
                 }
 
-                if (StringUtils.isNotEmpty(user.getCompany())) {
+                if (!TextUtils.isEmpty(user.getCompany())) {
                     mViewBinding.companyTitleTv.setVisibility(View.VISIBLE);
                     mViewBinding.companyTv.setVisibility(View.VISIBLE);
                     mViewBinding.companyTv.setText(user.getCompany());
@@ -107,7 +106,7 @@ public class DetailActivity extends BaseActivity<ActivityDetailBinding, DetailVi
                     mViewBinding.companyTv.setVisibility(View.GONE);
                 }
 
-                if (StringUtils.isNotEmpty(user.getLocation())) {
+                if (!TextUtils.isEmpty(user.getLocation())) {
                     mViewBinding.locationTitleTv.setVisibility(View.VISIBLE);
                     mViewBinding.locationTv.setVisibility(View.VISIBLE);
                     mViewBinding.locationTv.setText(user.getLocation());
@@ -116,7 +115,7 @@ public class DetailActivity extends BaseActivity<ActivityDetailBinding, DetailVi
                     mViewBinding.locationTv.setVisibility(View.GONE);
                 }
 
-                if (StringUtils.isNotEmpty(user.getBlog())) {
+                if (!TextUtils.isEmpty(user.getBlog())) {
                     mViewBinding.blogTitleTv.setVisibility(View.VISIBLE);
                     mViewBinding.blogTv.setVisibility(View.VISIBLE);
                     mViewBinding.blogTv.setText(user.getBlog());

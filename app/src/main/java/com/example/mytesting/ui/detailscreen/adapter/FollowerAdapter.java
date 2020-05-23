@@ -1,5 +1,6 @@
 package com.example.mytesting.ui.detailscreen.adapter;
 
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,8 +11,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.mytesting.data.model.User;
 import com.example.mytesting.databinding.FollowerListItemBinding;
 import com.squareup.picasso.Picasso;
-
-import org.apache.commons.lang3.StringUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -52,7 +51,7 @@ public class FollowerAdapter extends RecyclerView.Adapter<FollowerAdapter.ViewHo
         }
 
         void onBind(@NonNull User user) {
-            if (StringUtils.isNotEmpty(user.getAvatarUrl())) {
+            if (!TextUtils.isEmpty(user.getAvatarUrl())) {
                 Picasso.get().load(user.getAvatarUrl()).into(mViewBinding.avatar);
                 mViewBinding.avatar.setVisibility(View.VISIBLE);
             } else {
