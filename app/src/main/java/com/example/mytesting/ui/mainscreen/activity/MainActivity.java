@@ -37,9 +37,6 @@ public class MainActivity extends BaseActivity<ActivityMainBinding, MainViewMode
         mViewBinding = getViewDataBinding();
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
         mUserAdapter = new UserAdapter((position, username) -> {
-            if (viewModel.isLock())
-                return;
-            viewModel.setIsLock(true);
             Intent intent = new Intent(MainActivity.this, DetailActivity.class);
             intent.putExtra(Constants.INTENT_USERNAME_EXTRA, username);
             startActivity(intent);
@@ -70,6 +67,7 @@ public class MainActivity extends BaseActivity<ActivityMainBinding, MainViewMode
         viewModel.getUserList().observe(this, userList -> {
             viewModel.hideLoading();
             if (userList != null && !userList.isEmpty()) {
+                mViewBinding.userList.setVisibility(View.VISIBLE);
                 mUserAdapter.addItems(userList);
             }
         });

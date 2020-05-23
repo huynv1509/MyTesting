@@ -21,100 +21,110 @@
             android:layout_height="match_parent"
             tools:context=".ui.registerscreen.activity.RegisterActivity">
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/edtName"
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/edtNameLayout"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/edt_height"
-                android:hint="@string/your_name"
-                android:layout_marginTop="@dimen/padding_20"
-                android:layout_marginLeft="@dimen/padding_20"
-                android:layout_marginRight="@dimen/padding_20"
-                android:layout_marginBottom="@dimen/padding_20"
-                android:padding="@dimen/padding_10"
-                android:inputType="textPersonName"
-                android:fontFamily="@font/roboto_regular"
-                android:background="@drawable/edit_text_background"
-                android:textSize="@dimen/text_size_normal"
-                android:textColor="@color/colorTextNormal"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/fab_margin"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"/>
+                app:layout_constraintEnd_toEndOf="parent">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edtName"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/edt_height"
+                    android:hint="@string/your_name"
+                    android:padding="@dimen/padding_10"
+                    android:inputType="textPersonName"
+                    android:fontFamily="@font/roboto_regular"
+                    android:background="@drawable/edit_text_background"
+                    android:textSize="@dimen/text_size_normal"
+                    android:textColor="@color/colorTextNormal"/>
+            </com.google.android.material.textfield.TextInputLayout>
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/edtEmail"
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/edtEmailLayout"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/edt_height"
-                android:hint="@string/e_mail"
-                android:layout_marginTop="@dimen/padding_20"
-                android:layout_marginLeft="@dimen/padding_20"
-                android:layout_marginRight="@dimen/padding_20"
-                android:layout_marginBottom="@dimen/padding_20"
-                android:padding="@dimen/padding_10"
-                android:fontFamily="@font/roboto_regular"
-                android:inputType="textEmailAddress"
-                android:background="@drawable/edit_text_background"
-                android:textSize="@dimen/text_size_normal"
-                android:textColor="@color/colorTextNormal"
-                app:layout_constraintTop_toBottomOf="@+id/edtName"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/fab_margin"
+                app:layout_constraintTop_toBottomOf="@+id/edtNameLayout"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"/>
+                app:layout_constraintEnd_toEndOf="parent">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edtEmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/edt_height"
+                    android:hint="@string/e_mail"
+                    android:padding="@dimen/padding_10"
+                    android:fontFamily="@font/roboto_regular"
+                    android:inputType="textEmailAddress"
+                    android:background="@drawable/edit_text_background"
+                    android:textSize="@dimen/text_size_normal"
+                    android:textColor="@color/colorTextNormal"/>
+            </com.google.android.material.textfield.TextInputLayout>
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/edtRetypeEmail"
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/edtRetypeEmailLayout"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/edt_height"
-                android:hint="@string/re_type_email"
-                android:layout_marginTop="@dimen/padding_20"
-                android:layout_marginLeft="@dimen/padding_20"
-                android:layout_marginRight="@dimen/padding_20"
-                android:layout_marginBottom="@dimen/padding_20"
-                android:padding="@dimen/padding_10"
-                android:fontFamily="@font/roboto_regular"
-                android:inputType="textEmailAddress"
-                android:background="@drawable/edit_text_background"
-                android:textSize="@dimen/text_size_normal"
-                android:textColor="@color/colorTextNormal"
-                app:layout_constraintTop_toBottomOf="@+id/edtEmail"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/fab_margin"
+                app:layout_constraintTop_toBottomOf="@+id/edtEmailLayout"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"/>
+                app:layout_constraintEnd_toEndOf="parent">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edtRetypeEmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/edt_height"
+                    android:hint="@string/re_type_email"
+                    android:padding="@dimen/padding_10"
+                    android:fontFamily="@font/roboto_regular"
+                    android:inputType="textEmailAddress"
+                    android:background="@drawable/edit_text_background"
+                    android:textSize="@dimen/text_size_normal"
+                    android:textColor="@color/colorTextNormal"/>
+            </com.google.android.material.textfield.TextInputLayout>
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/edtPassword"
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/edtPasswordLayout"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/edt_height"
-                android:hint="@string/password"
-                android:layout_marginTop="@dimen/padding_20"
-                android:layout_marginLeft="@dimen/padding_20"
-                android:layout_marginRight="@dimen/padding_20"
-                android:layout_marginBottom="@dimen/padding_20"
-                android:padding="@dimen/padding_10"
-                android:fontFamily="@font/roboto_regular"
-                android:inputType="textPassword"
-                android:background="@drawable/edit_text_background"
-                android:textSize="@dimen/text_size_normal"
-                android:textColor="@color/colorTextNormal"
-                app:layout_constraintTop_toBottomOf="@+id/edtRetypeEmail"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/fab_margin"
+                app:layout_constraintTop_toBottomOf="@+id/edtRetypeEmailLayout"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"/>
+                app:layout_constraintEnd_toEndOf="parent">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edtPassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/edt_height"
+                    android:hint="@string/password"
+                    android:padding="@dimen/padding_10"
+                    android:fontFamily="@font/roboto_regular"
+                    android:inputType="textPassword"
+                    android:background="@drawable/edit_text_background"
+                    android:textSize="@dimen/text_size_normal"
+                    android:textColor="@color/colorTextNormal"/>
+            </com.google.android.material.textfield.TextInputLayout>
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/edtRePassword"
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/edtRePasswordLayout"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/edt_height"
-                android:hint="@string/re_type_password"
-                android:layout_marginTop="@dimen/padding_20"
-                android:layout_marginLeft="@dimen/padding_20"
-                android:layout_marginRight="@dimen/padding_20"
-                android:layout_marginBottom="@dimen/padding_20"
-                android:padding="@dimen/padding_10"
-                android:fontFamily="@font/roboto_regular"
-                android:inputType="textPassword"
-                android:background="@drawable/edit_text_background"
-                android:textSize="@dimen/text_size_normal"
-                android:textColor="@color/colorTextNormal"
-                app:layout_constraintTop_toBottomOf="@+id/edtPassword"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/fab_margin"
+                app:layout_constraintTop_toBottomOf="@+id/edtPasswordLayout"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"/>
+                app:layout_constraintEnd_toEndOf="parent">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edtRePassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/edt_height"
+                    android:hint="@string/re_type_password"
+                    android:padding="@dimen/padding_10"
+                    android:fontFamily="@font/roboto_regular"
+                    android:inputType="textPassword"
+                    android:background="@drawable/edit_text_background"
+                    android:textSize="@dimen/text_size_normal"
+                    android:textColor="@color/colorTextNormal"/>
+            </com.google.android.material.textfield.TextInputLayout>
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btn_register"
@@ -128,7 +138,9 @@
                 android:layout_marginBottom="@dimen/padding_20"
                 android:textColor="@android:color/white"
                 android:text="@string/register"
-                app:layout_constraintTop_toBottomOf="@+id/edtRePassword"
+                android:alpha="@{viewModel.enableRegisterBtn ? 1f : 0.3f}"
+                android:onClick="@{() -> viewModel.onRegister()}"
+                app:layout_constraintTop_toBottomOf="@+id/edtRePasswordLayout"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"/>
         </androidx.constraintlayout.widget.ConstraintLayout>

@@ -4,6 +4,7 @@ import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
+import com.example.mytesting.constants.RegisterStatus;
 import com.example.mytesting.utils.CommonUtils;
 
 import org.apache.commons.lang3.StringUtils;
@@ -85,27 +86,42 @@ public class RegisterModel {
         this.mConfirmPassword = confirmPassword;
     }
 
-    public boolean isNameValid() {
+    private boolean isNameValid() {
         return StringUtils.isNotEmpty(mName.trim());
     }
 
-    public boolean isEmailValid() {
+    private boolean isEmailValid() {
         return StringUtils.isNotEmpty(mEmail.trim());
     }
 
-    public boolean isPasswordValid() {
+    private boolean isPasswordValid() {
         return StringUtils.isNotEmpty(mPassword.trim());
     }
 
-    public boolean isConfirmEmailValid() {
+    private boolean isConfirmEmailValid() {
         if (StringUtils.isNotEmpty(mEmail.trim()) && StringUtils.isNotEmpty(mConfirmEmail.trim()))
             return CommonUtils.validateEmail(mEmail) && mEmail.equals(mConfirmEmail);
         return false;
     }
 
-    public boolean isConfirmPasswordValid() {
+    private boolean isConfirmPasswordValid() {
         if (StringUtils.isNotEmpty(mPassword.trim()) && StringUtils.isNotEmpty(mConfirmPassword.trim()))
             return mPassword.equals(mConfirmPassword);
         return false;
+    }
+
+    public RegisterStatus registerStatus() {
+        if (!isNameValid()) {
+            return RegisterStatus.NAME_ERROR;
+        } else if (!isEmailValid()) {
+            return RegisterStatus.EMAIL_ERROR;
+        } else if (!isConfirmEmailValid()) {
+            return RegisterStatus.CONFIRM_EMAIL_ERROR;
+        } else if (!isPasswordValid()) {
+            return RegisterStatus.PASSWORD_ERROR;
+        } else if (!isConfirmPasswordValid()) {
+            return RegisterStatus.CONFIRM_PASSWORD_ERROR;
+        }
+        return RegisterStatus.SUCCESS;
     }
 }

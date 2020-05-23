@@ -1,5 +1,8 @@
 <resources>
     <string name="app_name">Testing Application</string>
+    <string name="act_detail_name">Detail Information</string>
+    <string name="act_register_name">Register Account</string>
+    <string name="act_main_name">User List</string>
     <string name="login">Login</string>
     <string name="e_mail">Email</string>
     <string name="re_type_email">Confirm Email</string>
@@ -14,7 +17,7 @@
     <string name="blog">Blog</string>
     <string name="follower_information">Followers information</string>
     <string name="reload">Reload</string>
-    <string name="total">Total: %d</string>
+    <string name="total">Total: %d Followers</string>
 
     <string name="server_error">Cannot connect to server</string>
     <string name="error_internet_connection_warning">Please check your internet connection and try again.</string>

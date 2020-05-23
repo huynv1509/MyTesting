@@ -57,7 +57,6 @@ public class DetailActivity extends BaseActivity<ActivityDetailBinding, DetailVi
     private void initData() {
         String username = getIntent().getStringExtra(Constants.INTENT_USERNAME_EXTRA);
         viewModel.fetchUserDetail(username);
-        viewModel.fetchFollower(username);
     }
 
     private void initListener() {
@@ -89,6 +88,7 @@ public class DetailActivity extends BaseActivity<ActivityDetailBinding, DetailVi
         viewModel.getUser().observe(this, user -> {
             viewModel.hideLoading();
             if (user != null) {
+                viewModel.fetchFollower(user.getUsername());
                 if (StringUtils.isNotEmpty(user.getName())) {
                     mViewBinding.nameTitleTv.setVisibility(View.VISIBLE);
                     mViewBinding.nameTv.setVisibility(View.VISIBLE);

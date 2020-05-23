@@ -1,7 +1,6 @@
 package com.example.mytesting.ui.mainscreen.viewmodel;
 
 import android.annotation.SuppressLint;
-import androidx.databinding.ObservableField;
 import androidx.lifecycle.MutableLiveData;
 
 import com.example.mytesting.base.BaseViewModel;
