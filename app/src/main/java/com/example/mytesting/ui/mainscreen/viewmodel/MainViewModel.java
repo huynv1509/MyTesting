@@ -6,13 +6,14 @@ import androidx.lifecycle.MutableLiveData;
 import com.example.mytesting.base.BaseViewModel;
 import com.example.mytesting.data.model.User;
 import com.example.mytesting.data.remote.repository.UserRepository;
+import com.example.mytesting.ui.mainscreen.activity.MainNavigator;
 import com.example.mytesting.utils.rxscheduler.SchedulerListener;
 
 import java.util.List;
 
 import javax.inject.Inject;
 
-public class MainViewModel extends BaseViewModel {
+public class MainViewModel extends BaseViewModel<MainNavigator> {
     private UserRepository mUserRepository;
     private SchedulerListener mSchedulerListener;
     private MutableLiveData<List<User>> mUserList = new MutableLiveData<>();

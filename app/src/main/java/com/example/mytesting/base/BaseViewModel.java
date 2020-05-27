@@ -12,6 +12,7 @@ import com.jakewharton.retrofit2.adapter.rxjava2.HttpException;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.lang.ref.WeakReference;
 import java.net.ConnectException;
 import java.net.SocketTimeoutException;
 import java.net.UnknownHostException;
@@ -19,13 +20,22 @@ import java.net.UnknownHostException;
 import io.reactivex.disposables.CompositeDisposable;
 import io.reactivex.disposables.Disposable;
 
-public class BaseViewModel extends ViewModel {
+public class BaseViewModel<N> extends ViewModel {
+    private WeakReference<N> mNavigator;
     private ObservableField<Boolean> isLoading = new ObservableField<>();
     private MutableLiveData<String> showErrorObs = new MutableLiveData<>();
     private MutableLiveData<NetworkViewAction> networkViewAction = new MutableLiveData<>();
     private CompositeDisposable compositeDisposable = new CompositeDisposable();
     private String mFailedMessage;
     private boolean mIsLock = false;
+
+    public void setNavigator(N navigator) {
+        this.mNavigator = new WeakReference<>(navigator);
+    }
+
+    public N getNavigator() {
+        return mNavigator.get();
+    }
 
     public MutableLiveData<NetworkViewAction> getNetworkViewAction() {
         return networkViewAction;
