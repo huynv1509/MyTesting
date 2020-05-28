@@ -48,6 +48,8 @@ public class User {
     @SerializedName("followers_url")
     private String mFollowersUrl;
 
+    public User() {}
+
     public User(String username, String name, String company, String blog, String location, String email, String url, String avatarUrl, String followersUrl) {
         this.mUsername = username;
         this.mName = name;

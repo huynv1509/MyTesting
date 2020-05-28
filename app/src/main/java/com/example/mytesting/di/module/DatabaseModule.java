@@ -4,7 +4,8 @@ import android.content.Context;
 
 import androidx.room.Room;
 
-import com.example.mytesting.constants.Constant;
+import com.example.mytesting.constants.Constants;
+import com.example.mytesting.data.local.dao.RegisterDao;
 import com.example.mytesting.data.local.dao.UserDao;
 import com.example.mytesting.data.local.db.AppDatabase;
 import com.example.mytesting.di.DatabaseInfo;
@@ -27,12 +28,18 @@ public class DatabaseModule {
     @Provides
     @DatabaseInfo
     String provideDatabaseName() {
-        return Constant.DB_NAME;
+        return Constants.DB_NAME;
     }
 
     @Singleton
     @Provides
     UserDao provideUserDao(@NotNull AppDatabase appDatabase) {
         return appDatabase.userDao();
+    }
+
+    @Singleton
+    @Provides
+    RegisterDao provideRegisterDao(@NotNull AppDatabase appDatabase) {
+        return appDatabase.registerDao();
     }
 }
